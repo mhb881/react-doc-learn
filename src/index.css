@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+/* ✅ 不动你的变量结构 */
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+}
+
+#root {
+  min-height: 100svh;
+}
+
+.app-container {
+  width: min(85vw);
+  min-height: 100svh;
+  margin: 0 auto;
+  border-inline: 1px solid var(--border);
+  box-sizing: border-box;
+}
+
+/* ✅ 修复 media 嵌套 */
+@media (max-width: 1024px) {
+  :root {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
+
+/* ✅ 防止被 Tailwind 覆盖 */
+@layer base {
+  body {
+    margin: 0;
+  }
+
+  h1,
+  h2 {
+    font-family: var(--heading);
+    font-weight: 500;
+    color: var(--text-h);
+  }
+
+  h1 {
+    font-size: 36px;
+    letter-spacing: -1.68px;
+    margin: 32px 0;
+  }
+
+  h2 {
+    font-size: 24px;
+    line-height: 118%;
+    letter-spacing: -0.24px;
+    margin: 0 0 8px;
+  }
+}
+
+/* 下面这些可以不动（不会被 Tailwind 强影响） */
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+input,
+select {
+  font-family: inherit;
+  font-size: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-right: 0.25rem;
+  background: var(--bg);
+  color: var(--text-h);
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+  border-color: var(--accent-border);
+}
+
+input:disabled,
+select:disabled,
+textarea:disabled {
+  cursor: not-allowed;
+  background: var(--code-bg);
+  border-color: var(--border);
+  opacity: 0.7;
+  resize: none;
+  transition: all 0.2s ease-in-out;
+}
+
+textarea {
+  min-height: 100px;
+  font-family: inherit;
+  font-size: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-right: 0.25rem;
+  background: var(--bg);
+  color: var(--text-h);
+  box-sizing: border-box;
+}
+
+select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b6375' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  padding-right: 32px;
+}
+
+.primary-btn {
+  font-family: inherit;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  background: var(--accent);
+  color: var(--bg);
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+  display: inline-block;
+  &:hover {
+    background: var(--accent-bg);
+    color: var(--text-h);
+  }
+  &:focus {
+    outline: none;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    background: var(--border);
+  }
+  &:active {
+    background: var(--accent-border);
+  }
+  &:not(:disabled) {
+    box-shadow: var(--shadow);
+  }
+  &:not(:disabled):hover {
+    box-shadow: var(--shadow);
+  }
+  &:not(:disabled):active {
+    box-shadow: none;
+  }
+  &:not(:disabled):focus {
+    box-shadow: var(--shadow);
+  }
+}
