@@ -182,7 +182,27 @@ export const menuItems: MenuItemType[] = [
         to: "/managing-state/scaling-up-with-reducer-and-context",
         parentTo: "/managing-state",
         childrens: [],
-    }
+    },
+    {
+        title: "脱围机制",
+        to: "/escape-hatches",
+        parentTo: "/",
+        childrens: [],
+    },
+    {
+        title: "使用 ref 引用值",
+        to: "/escape-hatches/referencing-values-with-refs",
+        parentTo: "/escape-hatches",
+        childrens: [],
+        challenges: ["challenge-1", "challenge-2", "challenge-3", "challenge-4"],
+    },
+    {
+        title: "使用 ref 操作 DOM",
+        to: "/escape-hatches/manipulating-the-dom-with-refs",
+        parentTo: "/escape-hatches",
+        childrens: [],
+        challenges: ["challenge-1", "challenge-2", "challenge-3", "challenge-4"],
+    },
 ];
 
 export const META_TITLE = "React官网学习";

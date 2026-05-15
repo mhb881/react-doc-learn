@@ -86,6 +86,17 @@ import Challenge4_eslir from "./pages/managing-state/extracting-state-logic-into
 import PassingDateDeeplyWithContextPage from "./pages/managing-state/passing-data-deeply-with-context/page";
 import Challenge1_pddwc from "./pages/managing-state/passing-data-deeply-with-context/Challenge1_pddwc";
 import ScalingUpWithReducerAndContextPage from "./pages/managing-state/scaling-up-with-reducer-and-context/page";
+import EscapeHatchesPage from "./pages/escape-hatches/page";
+import ReferencingValuesWithRefsPage from "./pages/escape-hatches/referencing-values-with-refs/page";
+import Challenge1_rvwr from "./pages/escape-hatches/referencing-values-with-refs/Challenge1_rvwr";
+import Challenge2_rvwr from "./pages/escape-hatches/referencing-values-with-refs/Challenge2_rvwr";
+import Challenge3_rvwr from "./pages/escape-hatches/referencing-values-with-refs/Challenge3_rvwr";
+import Challenge4_rvwr from "./pages/escape-hatches/referencing-values-with-refs/Challenge4_rvwr";
+import ManipulatingTheDOMWithRefsPage from "./pages/escape-hatches/manipulating-the-dom-with-refs/page";
+import Challenge1_mtdwr from "./pages/escape-hatches/manipulating-the-dom-with-refs/Challenge1_mtdwr";
+import Challenge2_mtdwr from "./pages/escape-hatches/manipulating-the-dom-with-refs/Challenge2_mtdwr";
+import Challenge3_mtdwr from "./pages/escape-hatches/manipulating-the-dom-with-refs/Challenge3_mtdwr";
+import Challenge4_mtdwr from "./pages/escape-hatches/manipulating-the-dom-with-refs/Challenge4_mtdwr";
 
 // 数据加载函数
 async function loader() {
@@ -452,6 +463,47 @@ const router = createBrowserRouter([
                 element: <ScalingUpWithReducerAndContextPage />,
                 loader,
               },
+            ],
+          },
+        ],
+      },
+      {
+        path: "escape-hatches",
+        loader,
+        children: [
+          {
+            index: true,
+            element: <EscapeHatchesPage />,
+            loader,
+          },
+          {
+            path: "referencing-values-with-refs",
+            loader,
+            children: [
+              {
+                index: true,
+                element: <ReferencingValuesWithRefsPage />,
+                loader,
+              },
+              { path: "challenge-1", element: <Challenge1_rvwr />, loader },
+              { path: "challenge-2", element: <Challenge2_rvwr />, loader },
+              { path: "challenge-3", element: <Challenge3_rvwr />, loader },
+              { path: "challenge-4", element: <Challenge4_rvwr />, loader },
+            ],
+          },
+          {
+            path: "manipulating-the-dom-with-refs",
+            loader,
+            children: [
+              {
+                index: true,
+                element: <ManipulatingTheDOMWithRefsPage />,
+                loader,
+              },
+              { path: "challenge-1", element: <Challenge1_mtdwr />, loader },
+              { path: "challenge-2", element: <Challenge2_mtdwr />, loader },
+              { path: "challenge-3", element: <Challenge3_mtdwr />, loader },
+              { path: "challenge-4", element: <Challenge4_mtdwr />, loader },
             ],
           },
         ],
