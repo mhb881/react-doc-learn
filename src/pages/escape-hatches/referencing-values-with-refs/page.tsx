@@ -13,7 +13,7 @@ export function StopWatch() {
   // 暂停前累计的总毫秒数
   const elapsedRef = useRef(0); // 累计运行时长
 
-  // 定时器引用
+  // 定时器引用，操作 DOM 元素
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   // 开始 / 继续

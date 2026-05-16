@@ -203,6 +203,13 @@ export const menuItems: MenuItemType[] = [
         childrens: [],
         challenges: ["challenge-1", "challenge-2", "challenge-3", "challenge-4"],
     },
+    {
+        title: "使用 Effect 进行同步",
+        to: "/escape-hatches/synchronizing-with-effects",
+        parentTo: "/escape-hatches",
+        childrens: [],
+        challenges: ["challenge-1", "challenge-2", "challenge-3", "challenge-4"],
+    }
 ];
 
 export const META_TITLE = "React官网学习";

@@ -97,6 +97,11 @@ import Challenge1_mtdwr from "./pages/escape-hatches/manipulating-the-dom-with-r
 import Challenge2_mtdwr from "./pages/escape-hatches/manipulating-the-dom-with-refs/Challenge2_mtdwr";
 import Challenge3_mtdwr from "./pages/escape-hatches/manipulating-the-dom-with-refs/Challenge3_mtdwr";
 import Challenge4_mtdwr from "./pages/escape-hatches/manipulating-the-dom-with-refs/Challenge4_mtdwr";
+import SynchronizingWithEffectsPage from "./pages/escape-hatches/synchronizing-with-effects/page";
+import Challenge1_swe from "./pages/escape-hatches/synchronizing-with-effects/Challenge1_swe";
+import Challenge2_swe from "./pages/escape-hatches/synchronizing-with-effects/Challenge2_swe";
+import Challenge3_swe from "./pages/escape-hatches/synchronizing-with-effects/Challenge3_swe";
+import Challenge4_swe from "./pages/escape-hatches/synchronizing-with-effects/Challenge4_swe";
 
 // 数据加载函数
 async function loader() {
@@ -504,6 +509,21 @@ const router = createBrowserRouter([
               { path: "challenge-2", element: <Challenge2_mtdwr />, loader },
               { path: "challenge-3", element: <Challenge3_mtdwr />, loader },
               { path: "challenge-4", element: <Challenge4_mtdwr />, loader },
+            ],
+          },
+          {
+            path: "synchronizing-with-effects",
+            loader,
+            children: [
+              {
+                index: true,
+                element: <SynchronizingWithEffectsPage />,
+                loader,
+              },
+              { path: "challenge-1", element: <Challenge1_swe />, loader },
+              { path: "challenge-2", element: <Challenge2_swe />, loader },
+              { path: "challenge-3", element: <Challenge3_swe />, loader },
+              { path: "challenge-4", element: <Challenge4_swe />, loader },
             ],
           },
         ],

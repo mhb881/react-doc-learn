@@ -26,8 +26,11 @@ export default defineConfig([
       "no-console": "warn",
       // 未使用变量警告
       "@typescript-eslint/no-unused-vars": "warn",
-      // 未使用参数警告
-      "@typescript-eslint/no-unused-params": "warn",
+
+      // ✅ 强制检查 Hooks 依赖（缺失直接报错，不是警告）
+      // "react-hooks/exhaustive-deps": "error",
+      // ✅ 检查 Hooks 调用顺序（React 强制规则）
+      // "react-hooks/rules-of-hooks": "error",
     },
   },
 ]);

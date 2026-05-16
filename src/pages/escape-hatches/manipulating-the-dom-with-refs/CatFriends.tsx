@@ -43,8 +43,8 @@ function CatFriends() {
         </button>
       </nav>
 
-      <div className="overflow-x-hidden w-[600px] mx-auto relative border-2 p-8 rounded-2xl ">
-        <ul className="flex flex-row flex-nowrap gap-4 items-center p-2 w-[1000px]">
+      <div className="overflow-x-hidden w-150 mx-auto relative border-2 p-8 rounded-2xl ">
+        <ul className="flex flex-row flex-nowrap gap-4 items-center p-2 w-max">
           <li>
             <img
               src="https://placecats.com/neo/300/200"
